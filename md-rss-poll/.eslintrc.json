@@ -1,0 +1,24 @@
+{
+    "env": {
+        "node": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "impliedStrict": true
+        },
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "curly": ["error", "all"],
+        "eqeqeq": ["error"],
+        "func-style": ["error", "expression"],
+        "indent": ["error", 4],
+        "no-lonely-if": ["error"],
+        "no-var": ["error"],
+        "prefer-const": ["error", {"destructuring": "any"}],
+        "require-await": ["error"],
+        "semi": ["error", "always"]
+    }
+}

@@ -1,0 +1,6 @@
+node_modules/*
+manga/*
+md-rss-poll/node_modules
+md-rss-poll/bearer.token
+
+!manga/template.xml
