@@ -3,7 +3,7 @@ const app = express();
 const childProcess = require('child_process');
 const port = 3000;
 
-function runScript(scriptPath, callback) {
+const runScript = function(scriptPath, callback) {
     let invoked = false;
     const p = childProcess.fork(scriptPath);
     
@@ -27,15 +27,15 @@ function runScript(scriptPath, callback) {
     });
 };
 
-function mdRssPollCallback(err) {
+const mdRssPollCallback = function(err) {
     if (err) {
         console.error(err);
     }
 
     console.log('md-rss-poll exited - restarting in 5 seconds');
     setTimeout(() => {
-		runScript('md-rss-poll/app.js', mdRssPollCallback)
-	}, 5 * 1000);
+        runScript('md-rss-poll/app.js', mdRssPollCallback);
+    }, 5 * 1000);
 };
 
 app.use(express.static('manga'));
