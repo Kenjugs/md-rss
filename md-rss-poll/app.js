@@ -114,7 +114,7 @@ const createNewRssXml = async function(rssManga) {
 
     // iterate over each manga in the list
     for (const m of rssManga) {
-        const filePath = path.resolve(process.cwd(), 'manga', m.id);
+        const filePath = path.resolve(process.cwd(), 'manga', m.attributes.title.en.replace(/\s/g, '_'));
         const filename = 'rss.xml';
         let isCreateNew = false;
 
