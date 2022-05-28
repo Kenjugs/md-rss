@@ -40,7 +40,11 @@ const mdRssPollCallback = function(err) {
 };
 
 app.use(express.static(__dirname + '/'));
-app.use('/', serveIndex(__dirname + '/manga'));
+app.use('/', serveIndex(__dirname + '/manga', {
+    icons: true,
+    stylesheet: 'serve-index.css',
+    filter: (filename) => filename.match(/template\.xml/g) === null,
+}));
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
