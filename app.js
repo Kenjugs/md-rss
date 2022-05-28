@@ -39,7 +39,7 @@ const mdRssPollCallback = function(err) {
     }, 5 * 1000);
 };
 
-app.use(express.static(__dirname + '/'));
+app.use(express.static('manga'));
 app.use('/', serveIndex(__dirname + '/manga', {
     icons: true,
     stylesheet: 'serve-index.css',
