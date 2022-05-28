@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const childProcess = require('child_process');
+const serveIndex = require('serve-index');
 const port = 3000;
 
 const runScript = function(scriptPath, callback) {
@@ -38,11 +39,8 @@ const mdRssPollCallback = function(err) {
     }, 5 * 1000);
 };
 
-app.use(express.static('manga'));
-
-app.get('/', (req, res) => {
-    res.send('hello world');
-});
+app.use(express.static(__dirname + '/'));
+app.use('/', serveIndex(__dirname + '/manga'));
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);

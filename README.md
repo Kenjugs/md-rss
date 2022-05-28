@@ -17,8 +17,9 @@ All RSS files are generated and stored in a folder called
 manga, with spaces replaced with underscores (_). For example, "One Piece" would
 become "One_Piece".
 
-An RSS file can be accessed by running this app and then pointing
-your RSS client to `http://localhost:3000/{manga_name_here}/rss.xml`.
+An RSS file can be accessed by running this app and then navigating your
+internet browser to `http://localhost:3000/` and clicking through the directory
+listing to the `rss.xml` file.
 
 ### Account information
 Modify the file `md-rss-poll/authentication.js` to have your correct account information.
