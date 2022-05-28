@@ -39,8 +39,8 @@ const mdRssPollCallback = function(err) {
     }, 5 * 1000);
 };
 
-app.use(express.static('manga'));
-app.use('/', serveIndex(__dirname + '/manga', {
+
+app.use('/', express.static('manga'), serveIndex('manga', {
     icons: true,
     stylesheet: 'serve-index.css',
     filter: (filename) => filename.match(/template\.xml/g) === null,
